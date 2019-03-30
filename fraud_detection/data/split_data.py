@@ -29,6 +29,8 @@ with open('datasets/creditcard.csv', 'r') as csvDataFile:
             training_count = 0  # Amount of current legitimate transactions for training
             for row in csvReader:
                 if count == 0:
+                    training_writer.writerow(row)
+                    test_writer.writerow(row)
                     count += 1
                     continue
                 rand_val = random.randint(1, 10)
