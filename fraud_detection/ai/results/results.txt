@@ -1,6 +1,9 @@
+-- Pre-Sensitivity Analysis --
+Confusion Matrix:
 [[85040    10]
  [   43   106]]
-                   precision    recall  f1-score   support
+Classification Report:
+              precision    recall  f1-score   support
 
            0       1.00      1.00      1.00     85050
            1       0.91      0.71      0.80       149
@@ -9,4 +12,22 @@
    macro avg       0.96      0.86      0.90     85199
 weighted avg       1.00      1.00      1.00     85199
 
+Accuracy Score:
 0.9993779269709738
+
+-- Sensitivity Analysis with 10 features --
+Confusion Matrix:
+[[85156     6]
+ [   40   104]]
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00     85162
+           1       0.95      0.72      0.82       144
+
+   micro avg       1.00      1.00      1.00     85306
+   macro avg       0.97      0.86      0.91     85306
+weighted avg       1.00      1.00      1.00     85306
+
+Accuracy Score:
+0.9994607647762174

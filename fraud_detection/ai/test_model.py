@@ -9,16 +9,12 @@
 #########################################################################
 
 
-import pickle
 import pandas as pd
-from sklearn.ensemble import RandomForestClassifier
-from sklearn import tree
 from sklearn.metrics import classification_report, confusion_matrix, accuracy_score
 from sklearn.externals import joblib
 
-# TODO: make sure model is not empty, if it is run train model
 # Load in the test data
-fraud_value_index = 30
+fraud_value_index = 10
 test_data = pd.read_csv('../data/datasets/test_data.csv')
 x = test_data.iloc[:, 0:fraud_value_index].values
 y = test_data.iloc[:, fraud_value_index].values
@@ -31,8 +27,11 @@ result = loaded_model.predict(x)
 
 # Write results to a text file
 resultsFile = open('results/results.txt', 'a')
-resultsFile.writelines(str(confusion_matrix(y, result)))
-resultsFile.writelines(str(classification_report(y, result)))
+resultsFile.writelines("\n\nConfusion Matrix:" + '\n')
+resultsFile.writelines(str(confusion_matrix(y, result)) + '\n')
+resultsFile.writelines("Classification Report:" + '\n')
+resultsFile.writelines(str(classification_report(y, result)) + '\n')
+resultsFile.writelines("Accuracy Score:" + '\n')
 resultsFile.writelines(str(accuracy_score(y, result)))
 resultsFile.close()
 
